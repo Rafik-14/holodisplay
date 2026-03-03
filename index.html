@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="HoloDisplay — مروحة الهولوغرام ثلاثية الأبعاد الأكثر تقدماً في العالم. اجعل علامتك التجارية تنبض بالحياة." />
+    <title>HoloDisplay — مروحة الهولوغرام ثلاثية الأبعاد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="nav" id="navbar">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <span class="logo-icon">◈</span> HoloDisplay
+            </a>
+            <ul class="nav-links">
+                <li><a href="#products">المنتجات</a></li>
+                <li><a href="#features">الميزات</a></li>
+                <li><a href="#reviews">التقييمات</a></li>
+                <li><a href="#faq">الأسئلة الشائعة</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="cart-btn" id="cart-toggle-btn" onclick="toggleCart()" aria-label="View Cart">
+                    🛒 <span class="cart-count" id="cart-count">0</span>
+                </button>
+                <a href="#products" class="btn btn-nav" dir="rtl">تسوق الآن</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="hero-inner">
+            <div class="hero-text reveal">
+                <span class="badge">⚡ تقنية الهولوغرام من الجيل التالي</span>
+                <h1>اجعل علامتك التجارية<br /><span class="gradient-text">تطفو في الهواء</span></h1>
+                <ul class="hero-benefits">
+                    <li>✦ دقة شاشة فائقة بفضل أكثر من 1000 مصباح LED</li>
+                    <li>✦ متوفرة بـ 10 أحجام — من 30 سم إلى 280 سم</li>
+                    <li>✦ تحكم عبر الواي فاي باستخدام تطبيق الهاتف المحمول</li>
+                    <li>✦ ضمان لمدة 3 سنوات وشحن مجاني لجميع أنحاء العالم</li>
+                </ul>
+                <div class="hero-cta">
+                    <a href="#products" class="btn btn-primary">استكشف المنتجات</a>
+                    <a href="#media-showcase" class="btn btn-ghost">شاهد كيف تعمل</a>
+                </div>
+                <!-- Trust badges in French (part of the 30% French requirement) -->
+                <div class="trust-badges" dir="ltr">
+                    <span>🔒 Paiement Sécurisé</span>
+                    <span>🚚 Livraison Gratuite</span>
+                    <span>↩ Retours sous 30 Jours</span>
+                </div>
+            </div>
+            <div class="hero-visual reveal">
+                <div class="hero-img-wrap">
+                    <div class="glow-ring"></div>
+                    <img src="42 cm.jpg" alt="HoloDisplay 3D Hologram Fan" class="hero-img"
+                        onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
+                    <div class="hero-img-fallback">
+                        <span class="hero-fan-icon">◈</span>
+                        <p>3D Hologram Fan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- ===================== MEDIA SHOWCASE ===================== -->
+    <section class="media-showcase" id="media-showcase">
+        <div class="container">
+            <div class="media-container">
+                <div class="device-comparison">
+
+                    <div class="desktop-video-container">
+                        <video controls preload="metadata" loop autoplay muted playsinline>
+                            <source src="IMG_8726.MOV" type="video/quicktime">
+                            <source src="IMG_8726.MOV" type="video/mp4">
+                            <img src="42 cm.jpg" alt="Video preview" loading="lazy" />
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="media-caption">
+                <h3>جرب HoloDisplay أثناء العمل</h3>
+                <p>شاهد تقنية الهولوغرام ثلاثية الأبعاد الثورية الخاصة بنا تجعل العلامات التجارية تنبض بالحياة بتفاصيل
+                    مذهلة.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== SOCIAL PROOF #1 — AS SEEN IN (French) ===================== -->
+    <section class="as-seen-in" dir="ltr">
+        <p class="seen-label">Vu Dans</p>
+        <div class="logos-bar">
+            <span class="pub-logo">TechCrunch</span>
+            <span class="pub-logo">WIRED</span>
+            <span class="pub-logo">Forbes</span>
+            <span class="pub-logo">CES 2025</span>
+            <span class="pub-logo">Digital Trends</span>
+            <span class="pub-logo">The Verge</span>
+        </div>
+    </section>
+
+    <!-- ===================== PRODUCTS — 10 MODELS ===================== -->
+    <section class="products-section" id="products" dir="ltr">
+        <div class="section-header reveal">
+            <span class="section-tag">Nos Modèles</span>
+            <h2>Choisissez Votre HoloDisplay</h2>
+            <p>Des écrans de bureau compacts aux installations massives de stade — nous avons la bonne taille pour
+                chaque application.</p>
+        </div>
+        <div class="products-grid">
+
+            <!-- HD-F42 Product Card -->
+            <div class="product-card reveal" onclick="openModal('HD-F42')">
+                <div class="product-img-wrap">
+                    <div class="product-img"
+                        style="background-image:url('42 cm.jpg'); background-size:cover; background-position:center;">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="stars">★★★★★</div>
+                    <h3>HD-F42</h3>
+                    <p class="product-size">42 CM — Compact Pro</p>
+                    <p class="product-desc">Idéal pour les vitrines, les menus de restaurant et les présentations de
+                        produits.</p>
+                    <div class="product-footer">
+                        <span class="price">$449</span>
+                        <span class="view-details-hint">Voir les détails →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HD-F50 Product Card -->
+            <div class="product-card reveal" onclick="openModal('HD-F50')">
+                <div class="product-img-wrap">
+                    <div class="product-img"
+                        style="background-image:url('52 cm.jpg'); background-size:cover; background-position:center;">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="stars">★★★★★</div>
+                    <h3>HD-F50</h3>
+                    <p class="product-size">52 CM — Standard</p>
+                    <p class="product-desc">Notre modèle à 4 pales le plus vendu. Idéal pour les expositions et les
+                        événements.</p>
+                    <div class="product-footer">
+                        <span class="price">$549</span>
+                        <span class="view-details-hint">Voir les détails →</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- HD-F65 Product Card -->
+            <div class="product-card reveal" onclick="openModal('HD-F65')">
+                <div class="product-img-wrap">
+                    <div class="product-img"
+                        style="background-image:url('65 cm.jpg'); background-size:cover; background-position:center;">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <div class="stars">★★★★★</div>
+                    <h3>HD-F65</h3>
+                    <p class="product-size">65 CM — Large</p>
+                    <p class="product-desc">Visuels à fort impact pour les salons professionnels, les magasins phares et
+                        les musées.</p>
+                    <div class="product-footer">
+                        <span class="price">$799</span>
+                        <span class="view-details-hint">Voir les détails →</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===================== SOCIAL PROOF #2 — REVIEWS ===================== -->
+    <section class="reviews" id="reviews">
+        <div class="section-header reveal">
+            <span class="section-tag">آراء العملاء</span>
+            <h2>يحبه أكثر من 5000 نشاط تجاري</h2>
+        </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE US — BRAND BENEFITS ===================== -->
+    <section class="features-section" id="features">
+        <div class="features-inner">
+            <div class="features-visual reveal">
+                <div class="spec-card" dir="ltr">
+                    <h3>Spécifications Techniques</h3>
+                    <ul class="spec-list">
+                        <li><span>Résolution</span><strong>1024 × 512 px</strong></li>
+                        <li><span>Nombre de LED</span><strong>448 par pale</strong></li>
+                        <li><span>Tr/min</span><strong>700–900 Tr/min</strong></li>
+                        <li><span>Luminosité</span><strong>2000 Nits</strong></li>
+                        <li><span>Connectivité</span><strong>Wi-Fi / USB / SD</strong></li>
+                        <li><span>Formats</span><strong>MP4 / GIF / PNG</strong></li>
+                        <li><span>Garantie</span><strong>3 Ans</strong></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="features-text reveal">
+                <span class="section-tag">لماذا HoloDisplay</span>
+                <h2>مروحة الهولوغرام الأكثر تقدماً في السوق</h2>
+                <ul class="benefit-list">
+                    <li>
+                        <span class="benefit-icon">🎯</span>
+                        <div>
+                            <strong>دقة فائقة الوضوح</strong>
+                            <p>شاشة بدقة 1024×512 بكسل مع سطوع 2000 شمعة — مرئية حتى في ضوء الشمس المباشر.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">📱</span>
+                        <div>
+                            <strong>تحكم بالتطبيق في أي مكان</strong>
+                            <p>قم بتحميل المحتوى وجدولة قوائم التشغيل وإدارة مراوح متعددة عن بُعد عبر تطبيقنا.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">🔗</span>
+                        <div>
+                            <strong>مزامنة سلسة</strong>
+                            <p>اربط مراوح متعددة معاً لإنشاء جدران هولوغرام ضخمة متزامنة.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">🛡️</span>
+                        <div>
+                            <strong>ضمان لمدة 3 سنوات</strong>
+                            <p>جودة بناء تجارية مدعومة بضماننا الرائد في الصناعة ودعم على مدار الساعة.
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+                <a href="#products" class="btn btn-primary" dir="rtl">تصفح جميع الموديلات</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="faq-section" id="faq">
+        <div class="section-header reveal">
+            <span class="section-tag">الأسئلة الشائعة</span>
+            <h2>الأسئلة المتداولة</h2>
+        </div>
+        <div class="faq-list">
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>ما هي تنسيقات المحتوى التي يدعمها HoloDisplay؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>يدعم HoloDisplay فيديو MP4 (H.264) و GIFs المتحركة وتسلسلات صور PNG/JPG. يقوم تطبيق سطح المكتب
+                        المجاني لدينا بتحويل أي محتوى إلى التنسيق الأمثل للهولوغرام في ثوانٍ.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>كيف يمكنني تحميل المحتوى على المروحة؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>يمكنك التحميل لاسلكياً عبر تطبيق الواي فاي الخاص بنا (iOS و Android)، أو إدخال بطاقة SD مباشرة في
+                        المروحة، أو التوصيل عبر كابل USB. تستغرق العملية أقل من 30 ثانية.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل من الآمن استخدام HoloDisplay في الداخل؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>نعم. جميع موديلات HoloDisplay حاصلة على شهادات CE و FCC و RoHS. تدور الشفرات بسرعة آمنة ومتحكم
+                        فيها، وتشمل جميع الموديلات خيار واقي السلامة للبيئات المزدحمة.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل يمكنني مزامنة مراوح متعددة معاً؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>بالتأكيد. تدعم وحدة المزامنة الخاصة بنا حتى 32 مروحة تعرض نفس المحتوى في وقت واحد، مما يؤدي إلى
+                        إنشاء جدران هولوغرام عملاقة لأقصى تأثير.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>ما هي سياسة الضمان والإرجاع؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>تأتي جميع المراوح مع ضمان تجاري لمدة 3 سنوات. نقدم سياسة إرجاع لمدة 30 يوماً وتوصيل مجاني لجميع
+                        الطلبات في جميع أنحاء العالم.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span>هل تقدمون خدمات إنشاء محتوى مخصص؟</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <p>نعم! يقدم استوديو الإبداع الداخلي لدينا خدمات رسوم متحركة ثلاثية الأبعاد مُحسّنة للهولوغرام.
+                        تواصل معنا للحصول على عرض أسعار مخصص يتناسب مع علامتك التجارية وحالتك الاستخدامية.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER CTA ===================== -->
+    <section class="footer-cta">
+        <div class="footer-cta-inner reveal">
+            <h2>هل أنت مستعد لجعل علامتك التجارية تنبض بالحياة؟</h2>
+            <p>انضم إلى أكثر من 5000 نشاط تجاري يستخدمون HoloDisplay بالفعل لجذب جمهورهم.</p>
+            <a href="#products" class="btn btn-primary" dir="rtl">تسوق جميع الموديلات</a>
+        </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="nav-logo"><span class="logo-icon">◈</span> HoloDisplay</span>
+                <p>الشركة العالمية الرائدة في تصنيع مراوح الهولوغرام ثلاثية الأبعاد.</p>
+            </div>
+            <div class="footer-links">
+                <strong>المنتجات</strong>
+                <a href="#products">جميع الموديلات</a>
+                <a href="#usecases">حالات الاستخدام</a>
+                <a href="#features">المواصفات</a>
+            </div>
+            <div class="footer-links">
+                <strong>الشركة</strong>
+                <a href="#">معلومات عنا</a>
+                <a href="#">اتصل بنا</a>
+                <a href="#">الشركاء</a>
+            </div>
+            <div class="footer-links">
+                <strong>الدعم</strong>
+                <a href="#faq">الأسئلة الشائعة</a>
+                <a href="#">الضمان</a>
+                <a href="#">المرتجعات</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 HoloDisplay. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- CART TOAST -->
+    <div class="toast" id="toast" dir="ltr">✅ Ajouté au panier !</div>
+
+    <!-- ===================== PRODUCT MODAL ===================== -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box" id="modal-box" dir="ltr">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">✕</button>
+            <div class="modal-inner">
+                <div class="modal-img-col">
+                    <div class="modal-img" id="modal-img"></div>
+                    <div class="modal-badges">
+                        <span class="modal-badge">🔒 Paiement Sécurisé</span>
+                        <span class="modal-badge">🚚 Livraison Gratuite</span>
+                        <span class="modal-badge">↩ Retours sous 30 Jours</span>
+                    </div>
+                </div>
+                <div class="modal-info-col">
+                    <span class="section-tag" id="modal-tag">Produit</span>
+                    <h2 id="modal-name"></h2>
+                    <div class="stars modal-stars" id="modal-stars"></div>
+                    <p class="modal-size-label" id="modal-size"></p>
+                    <p class="modal-desc-long" id="modal-desc"></p>
+                    <div class="modal-specs" id="modal-specs"></div>
+                    <div class="modal-footer">
+                        <span class="modal-price" id="modal-price"></span>
+                        <div class="modal-qty-wrap">
+                            <label>Qté</label>
+                            <div class="qty-control">
+                                <button onclick="changeQty(-1)">−</button>
+                                <span id="modal-qty">1</span>
+                                <button onclick="changeQty(1)">+</button>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary modal-cart-btn" id="modal-add-btn"
+                            onclick="addToCartFromModal()">🛒 Ajouter au Panier</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===================== CART PAGE OVERLAY ===================== -->
+    <div class="cart-overlay" id="cart-overlay">
+        <div class="cart-panel">
+            <div class="cart-header">
+                <h2>🛒 سلة التسوق</h2>
+                <button class="modal-close" onclick="toggleCart()" aria-label="Close Cart">✕</button>
+            </div>
+            <div class="cart-items" id="cart-items" dir="ltr">
+                <!-- items injected by JS (mixed ltr due to product names) -->
+            </div>
+            <div class="cart-empty" id="cart-empty">
+                <span class="cart-empty-icon">◈</span>
+                <p>سلة التسوق فارغة</p>
+                <button class="btn btn-ghost" onclick="toggleCart()">تصفح المنتجات</button>
+            </div>
+            <div class="cart-summary" id="cart-summary">
+                <div class="cart-summary-row">
+                    <span>المجموع الفرعي</span>
+                    <span id="cart-subtotal" dir="ltr">$0</span>
+                </div>
+                <div class="cart-summary-row">
+                    <span>الشحن</span>
+                    <span class="cart-free">مجاني</span>
+                </div>
+                <div class="cart-summary-row cart-total-row">
+                    <span>الإجمالي</span>
+                    <span id="cart-total" dir="ltr">$0</span>
+                </div>
+                <button class="btn btn-primary cart-checkout-btn" onclick="openCheckoutModal()">المتابعة للدفع
+                    →</button>
+                <button class="btn btn-ghost cart-continue-btn" onclick="toggleCart()">← الاستمرار في التسوق</button>
+            </div>
+            <!-- Checkout Confirmation Modal -->
+            <div class="modal-overlay" id="checkout-modal-overlay">
+                <div class="checkout-modal-box">
+                    <div class="checkout-modal-header">
+                        <h2>تأكيد طلبك</h2>
+                        <button class="modal-close" onclick="closeCheckoutModal()" aria-label="Close">✕</button>
+                    </div>
+                    <div class="checkout-modal-body">
+                        <h3>بياناتك:</h3>
+                        <div class="checkout-form">
+                            <input type="text" id="customer-name" placeholder="الاسم الكامل" required>
+                            <input type="email" id="customer-email" placeholder="عنوان البريد الإلكتروني" required>
+                            <input type="tel" id="customer-phone" placeholder="رقم الهاتف" required>
+                        </div>
+                        <h3 class="mt-4">ملخص الطلب:</h3>
+                        <div id="checkout-order-details" class="order-details" dir="ltr">
+                            <!-- Order details will be populated by JavaScript -->
+                        </div>
+                        <div class="checkout-total">
+                            <div class="cart-summary-row cart-total-row">
+                                <span>الإجمالي:</span>
+                                <span id="checkout-total" dir="ltr">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="checkout-modal-footer">
+                        <button class="btn btn-primary" onclick="confirmPurchase()">تأكيد الشراء</button>
+                        <button class="btn btn-ghost" onclick="closeCheckoutModal()">إلغاء</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("KtOP8H1TDmMohsATQ");
+        })();
+    </script>
+</body>
+
+</html>
