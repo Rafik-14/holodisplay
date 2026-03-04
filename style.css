@@ -424,13 +424,13 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 400px;
+    min-height: clamp(300px, 80vw, 480px);
 }
 
 .glow-ring {
     position: absolute;
-    width: 380px;
-    height: 380px;
+    width: clamp(300px, 80vw, 480px);
+    height: clamp(300px, 80vw, 480px);
     border-radius: 50%;
     border: 1px solid rgba(0, 212, 255, 0.15);
     box-shadow: 0 0 60px rgba(0, 212, 255, 0.1), inset 0 0 60px rgba(123, 47, 255, 0.06);
@@ -453,7 +453,13 @@ p {
 
 .hero-img {
     width: 100%;
-    max-width: 380px;
+    max-width: clamp(300px, 80vw, 480px);
+    background-color: #fff;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    border-radius: 50%;
+    padding: clamp(1.5rem, 8vw, 4.5rem);
+    box-sizing: border-box;
     position: relative;
     z-index: 1;
     filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.4));
@@ -659,9 +665,7 @@ p {
     border-top: 1px solid var(--border);
 }
 
-.categories .section-header {
-    /* inherits */
-}
+
 
 .bento-grid {
     max-width: 1100px;
@@ -1269,7 +1273,9 @@ p {
     }
 
     .hero-visual {
-        display: none;
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
     }
 
     .features-inner,
@@ -1278,8 +1284,17 @@ p {
         gap: 3rem;
     }
 
+    .nav-inner {
+        flex-wrap: wrap;
+    }
+
     .nav-links {
-        display: none;
+        display: flex;
+        width: 100%;
+        order: 3;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 1rem;
     }
 
     .products-grid {

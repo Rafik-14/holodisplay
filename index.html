@@ -12,7 +12,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,400&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=5" />
+    <link rel="preload" as="image" href="holo fan.jpeg" />
 </head>
 
 <body>
@@ -45,11 +46,11 @@
             <div class="hero-text reveal">
                 <span class="badge">⚡ تقنية الهولوغرام من الجيل التالي</span>
                 <h1>اجعل علامتك التجارية<br /><span class="gradient-text">تطفو في الهواء</span></h1>
-                <ul class="hero-benefits">
-                    <li>✦ دقة شاشة فائقة بفضل أكثر من 1000 مصباح LED</li>
-                    <li>✦ متوفرة بـ 10 أحجام — من 30 سم إلى 280 سم</li>
-                    <li>✦ تحكم عبر الواي فاي باستخدام تطبيق الهاتف المحمول</li>
-                    <li>✦ ضمان لمدة 3 سنوات وشحن مجاني لجميع أنحاء العالم</li>
+                <ul class="hero-benefits" dir="ltr" style="text-align: left;">
+                    <li>✦ 16.5" 3D Hologram display with advanced LEDs</li>
+                    <li>✦ Bluetooth connectivity for sound syncing</li>
+                    <li>✦ Wi-Fi & App control for easy content management</li>
+                    <li>✦ 700 High-quality 3D video library included</li>
                 </ul>
                 <div class="hero-cta">
                     <a href="#products" class="btn btn-primary">استكشف المنتجات</a>
@@ -65,7 +66,7 @@
             <div class="hero-visual reveal">
                 <div class="hero-img-wrap">
                     <div class="glow-ring"></div>
-                    <img src="42 cm.jpg" alt="HoloDisplay 3D Hologram Fan" class="hero-img"
+                    <img src="holo fan.jpeg" alt="HoloDisplay 3D Hologram Fan" class="hero-img"
                         onerror="this.style.display='none'; this.parentElement.classList.add('no-img')" />
                     <div class="hero-img-fallback">
                         <span class="hero-fan-icon">◈</span>
@@ -90,7 +91,7 @@
                         <video controls preload="metadata" loop autoplay muted playsinline>
                             <source src="IMG_8726.MOV" type="video/quicktime">
                             <source src="IMG_8726.MOV" type="video/mp4">
-                            <img src="42 cm.jpg" alt="Video preview" loading="lazy" />
+                            <img src="holo fan.jpeg" alt="Video preview" loading="lazy" />
                             Your browser does not support the video tag.
                         </video>
                     </div>
@@ -120,69 +121,27 @@
     <!-- ===================== PRODUCTS — 10 MODELS ===================== -->
     <section class="products-section" id="products" dir="ltr">
         <div class="section-header reveal">
-            <span class="section-tag">Nos Modèles</span>
-            <h2>Choisissez Votre HoloDisplay</h2>
-            <p>Des écrans de bureau compacts aux installations massives de stade — nous avons la bonne taille pour
-                chaque application.</p>
+            <span class="section-tag">Our Product</span>
+            <h2>Experience the Missyou Hologram Fan</h2>
+            <p>Elevate your display with stunning 3D holographic visuals, perfect for any professional environment.</p>
         </div>
         <div class="products-grid">
 
-            <!-- HD-F42 Product Card -->
-            <div class="product-card reveal" onclick="openModal('HD-F42')">
+            <!-- Missyou Product Card -->
+            <div class="product-card reveal" onclick="openModal('Missyou-16')">
                 <div class="product-img-wrap">
                     <div class="product-img"
-                        style="background-image:url('42 cm.jpg'); background-size:cover; background-position:center;">
+                        style="background-image:url('holo fan.jpeg'); background-size:cover; background-position:center;">
                     </div>
                 </div>
                 <div class="product-info">
                     <div class="stars">★★★★★</div>
-                    <h3>HD-F42</h3>
-                    <p class="product-size">42 CM — Compact Pro</p>
-                    <p class="product-desc">Idéal pour les vitrines, les menus de restaurant et les présentations de
-                        produits.</p>
+                    <h3>Missyou 16.5"</h3>
+                    <p class="product-size">3D Hologram Fan</p>
+                    <p class="product-desc">Advanced LED technology to create vibrant, high-definition 3D visuals.</p>
                     <div class="product-footer">
-                        <span class="price">$449</span>
-                        <span class="view-details-hint">Voir les détails →</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HD-F50 Product Card -->
-            <div class="product-card reveal" onclick="openModal('HD-F50')">
-                <div class="product-img-wrap">
-                    <div class="product-img"
-                        style="background-image:url('52 cm.jpg'); background-size:cover; background-position:center;">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★</div>
-                    <h3>HD-F50</h3>
-                    <p class="product-size">52 CM — Standard</p>
-                    <p class="product-desc">Notre modèle à 4 pales le plus vendu. Idéal pour les expositions et les
-                        événements.</p>
-                    <div class="product-footer">
-                        <span class="price">$549</span>
-                        <span class="view-details-hint">Voir les détails →</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- HD-F65 Product Card -->
-            <div class="product-card reveal" onclick="openModal('HD-F65')">
-                <div class="product-img-wrap">
-                    <div class="product-img"
-                        style="background-image:url('65 cm.jpg'); background-size:cover; background-position:center;">
-                    </div>
-                </div>
-                <div class="product-info">
-                    <div class="stars">★★★★★</div>
-                    <h3>HD-F65</h3>
-                    <p class="product-size">65 CM — Large</p>
-                    <p class="product-desc">Visuels à fort impact pour les salons professionnels, les magasins phares et
-                        les musées.</p>
-                    <div class="product-footer">
-                        <span class="price">$799</span>
-                        <span class="view-details-hint">Voir les détails →</span>
+                        <span class="price">$149</span>
+                        <span class="view-details-hint" dir="ltr">Voir les détails →</span>
                     </div>
                 </div>
             </div>
@@ -205,47 +164,56 @@
                 <div class="spec-card" dir="ltr">
                     <h3>Spécifications Techniques</h3>
                     <ul class="spec-list">
-                        <li><span>Résolution</span><strong>1024 × 512 px</strong></li>
-                        <li><span>Nombre de LED</span><strong>448 par pale</strong></li>
-                        <li><span>Tr/min</span><strong>700–900 Tr/min</strong></li>
-                        <li><span>Luminosité</span><strong>2000 Nits</strong></li>
-                        <li><span>Connectivité</span><strong>Wi-Fi / USB / SD</strong></li>
-                        <li><span>Formats</span><strong>MP4 / GIF / PNG</strong></li>
-                        <li><span>Garantie</span><strong>3 Ans</strong></li>
+                        <li><span>Brand</span><strong>Missyou</strong></li>
+                        <li><span>Uses</span><strong>Business</strong></li>
+                        <li><span>Feature</span><strong>3d-Ready, Built-In 3d</strong></li>
+                        <li><span>Connection</span><strong>Bluetooth, Wi-Fi</strong></li>
+                        <li><span>Resolution</span><strong>1024 × 768 px</strong></li>
                     </ul>
                 </div>
             </div>
             <div class="features-text reveal">
-                <span class="section-tag">لماذا HoloDisplay</span>
-                <h2>مروحة الهولوغرام الأكثر تقدماً في السوق</h2>
-                <ul class="benefit-list">
+                <span class="section-tag" style="direction: ltr;">Why Missyou</span>
+                <h2 style="direction: ltr;">The Most Advanced Hologram Fan</h2>
+                <ul class="benefit-list" dir="ltr">
                     <li>
-                        <span class="benefit-icon">🎯</span>
+                        <span class="benefit-icon">🔥</span>
                         <div>
-                            <strong>دقة فائقة الوضوح</strong>
-                            <p>شاشة بدقة 1024×512 بكسل مع سطوع 2000 شمعة — مرئية حتى في ضوء الشمس المباشر.</p>
+                            <strong>Stunning 3D Holographic Display</strong>
+                            <p>The Missyou 16.5" 3D hologram fan uses advanced LED technology to create vibrant,
+                                high-definition 3D visuals that are clear and bright even in well-lit environments.</p>
                         </div>
                     </li>
                     <li>
-                        <span class="benefit-icon">📱</span>
+                        <span class="benefit-icon">�</span>
                         <div>
-                            <strong>تحكم بالتطبيق في أي مكان</strong>
-                            <p>قم بتحميل المحتوى وجدولة قوائم التشغيل وإدارة مراوح متعددة عن بُعد عبر تطبيقنا.</p>
+                            <strong>Wi-Fi and App Control</strong>
+                            <p>Easily update content and videos via Wi-Fi connection using a simple app. Compatible with
+                                Smart devices, it allows easy content and video management.</p>
                         </div>
                     </li>
                     <li>
-                        <span class="benefit-icon">🔗</span>
+                        <span class="benefit-icon">�</span>
                         <div>
-                            <strong>مزامنة سلسة</strong>
-                            <p>اربط مراوح متعددة معاً لإنشاء جدران هولوغرام ضخمة متزامنة.</p>
+                            <strong>Bluetooth for Sound Syncing</strong>
+                            <p>Connect external speakers via Bluetooth to enhance your visual display with synced sound,
+                                perfect for trade shows, exhibitions, or festivals.</p>
                         </div>
                     </li>
                     <li>
-                        <span class="benefit-icon">🛡️</span>
+                        <span class="benefit-icon">�</span>
                         <div>
-                            <strong>ضمان لمدة 3 سنوات</strong>
-                            <p>جودة بناء تجارية مدعومة بضماننا الرائد في الصناعة ودعم على مدار الساعة.
-                            </p>
+                            <strong>700 Video Library Included</strong>
+                            <p>Upon purchase, receive access to a library of 700 high-quality 3D video materials that
+                                you can use to create dynamic and engaging presentations.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="benefit-icon">🔥</span>
+                        <div>
+                            <strong>Remote Control & Sleek White Design</strong>
+                            <p>Seamlessly integrates into any professional environment. Switch between videos and manage
+                                power effortlessly with the included remote control.</p>
                         </div>
                     </li>
                 </ul>
@@ -302,26 +270,6 @@
                 <div class="faq-answer">
                     <p>بالتأكيد. تدعم وحدة المزامنة الخاصة بنا حتى 32 مروحة تعرض نفس المحتوى في وقت واحد، مما يؤدي إلى
                         إنشاء جدران هولوغرام عملاقة لأقصى تأثير.</p>
-                </div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    <span>ما هي سياسة الضمان والإرجاع؟</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>تأتي جميع المراوح مع ضمان تجاري لمدة 3 سنوات. نقدم سياسة إرجاع لمدة 30 يوماً وتوصيل مجاني لجميع
-                        الطلبات في جميع أنحاء العالم.</p>
-                </div>
-            </div>
-            <div class="faq-item reveal">
-                <button class="faq-question" onclick="toggleFaq(this)">
-                    <span>هل تقدمون خدمات إنشاء محتوى مخصص؟</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>نعم! يقدم استوديو الإبداع الداخلي لدينا خدمات رسوم متحركة ثلاثية الأبعاد مُحسّنة للهولوغرام.
-                        تواصل معنا للحصول على عرض أسعار مخصص يتناسب مع علامتك التجارية وحالتك الاستخدامية.</p>
                 </div>
             </div>
         </div>

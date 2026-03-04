@@ -97,29 +97,13 @@ sections.forEach(s => sectionObserver.observe(s));
    PRODUCT DATA — for modal
    ===================================================== */
 const PRODUCTS = {
-  'HD-F42': {
-    name: 'HD-F42',
-    size: '42 CM — Compact Pro',
-    price: 449,
+  'Missyou-16': {
+    name: 'Missyou 16.5" 3D Fan',
+    size: '16.5"',
+    price: 149,
     stars: '★★★★★',
-    desc: 'Idéal pour les vitrines, les menus de restaurant et les présentations de produits.',
-    specs: { Diamètre: '42 cm', LEDs: '320 par pale', 'Tr/min': '720 rpm', Puissance: '45W', Connectivité: 'Wi-Fi + SD Card', Garantie: '3 Ans' }
-  },
-  'HD-F50': {
-    name: 'HD-F50',
-    size: '52 CM — Standard',
-    price: 549,
-    stars: '★★★★★',
-    desc: 'Notre modèle à 4 pales le plus vendu. Idéal pour les expositions et les événements.',
-    specs: { Diamètre: '52 cm', LEDs: '448 par pale', Pales: '4', 'Tr/min': '700 rpm', Connectivité: 'Wi-Fi + SD + USB', Garantie: '3 Ans' }
-  },
-  'HD-F65': {
-    name: 'HD-F65',
-    size: '65 CM — Large',
-    price: 799,
-    stars: '★★★★★',
-    desc: 'Visuels à fort impact pour les salons professionnels, les magasins phares et les musées. Sa grande zone d\'affichage attire l\'attention.',
-    specs: { Diamètre: '65 cm', LEDs: '576 par pale', Pales: '4', 'Tr/min': '680 rpm', Connectivité: 'Wi-Fi + App + SD', Garantie: '3 Ans' }
+    desc: 'Advanced LED technology to create vibrant, high-definition 3D visuals that are clear and bright.',
+    specs: { Brand: 'Missyou', Uses: 'Business', 'Special Feature': '3d-Ready, Built-In 3d', Connectivity: 'Bluetooth, Wi-Fi', Resolution: '1024 x 768' }
   }
 };
 
@@ -148,34 +132,18 @@ function openModal(productId) {
   // Set the product-specific image as a child element
   img.innerHTML = '';
 
-  if (productId === 'HD-F42') {
+  if (productId === 'Missyou-16') {
     const imgElement = document.createElement('img');
-    imgElement.src = '42 cm.jpg';
-    imgElement.alt = 'HD-F42 Product Image';
-    imgElement.style.width = '100%';
-    imgElement.style.height = '100%';
-    imgElement.style.objectFit = 'cover';
-    img.appendChild(imgElement);
-  } else if (productId === 'HD-F50') {
-    const imgElement = document.createElement('img');
-    imgElement.src = '52 cm.jpg';
-    imgElement.alt = 'HD-F50 Product Image';
-    imgElement.style.width = '100%';
-    imgElement.style.height = '100%';
-    imgElement.style.objectFit = 'cover';
-    img.appendChild(imgElement);
-  } else if (productId === 'HD-F65') {
-    const imgElement = document.createElement('img');
-    imgElement.src = '65 cm.jpg';
-    imgElement.alt = 'HD-F65 Product Image';
+    imgElement.src = 'holo fan.jpeg';
+    imgElement.alt = 'Missyou Product Image';
     imgElement.style.width = '100%';
     imgElement.style.height = '100%';
     imgElement.style.objectFit = 'cover';
     img.appendChild(imgElement);
   } else {
-    // Fallback for other products
+    // Fallback
     const imgElement = document.createElement('img');
-    imgElement.src = '42 cm.jpg';
+    imgElement.src = 'holo fan.jpeg';
     imgElement.alt = 'Product Image';
     imgElement.style.width = '100%';
     imgElement.style.height = '100%';
@@ -278,16 +246,7 @@ function updateCartUI() {
     summaryEl.style.display = 'flex';
 
     itemsEl.innerHTML = entries.map(({ product, qty }) => {
-      let imgStyle;
-      if (product.name === 'HD-F42') {
-        imgStyle = "background-image:url('42 cm.jpg');background-size:cover;background-position:center;";
-      } else if (product.name === 'HD-F50') {
-        imgStyle = "background-image:url('52 cm.jpg');background-size:cover;background-position:center;";
-      } else if (product.name === 'HD-F65') {
-        imgStyle = "background-image:url('65 cm.jpg');background-size:cover;background-position:center;";
-      } else {
-        imgStyle = "background-image:url('42 cm.jpg');background-position:center;background-size:cover;";
-      }
+      let imgStyle = "background-image:url('holo fan.jpeg');background-size:cover;background-position:center;";
 
       return `
       <div class="cart-item">
