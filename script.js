@@ -97,13 +97,13 @@ sections.forEach(s => sectionObserver.observe(s));
    PRODUCT DATA — for modal
    ===================================================== */
 const PRODUCTS = {
-  'Missyou-16': {
-    name: 'Missyou 42 cm 3D Fan',
+  'MS-16': {
+    name: 'MS 42 cm 3D Fan',
     size: '42 cm',
     price: 19000,
     stars: '★★★★★',
     desc: 'Advanced LED technology to create vibrant, high-definition 3D visuals that are clear and bright.',
-    specs: { Brand: 'Missyou', Uses: 'Business', 'Special Feature': '3d-Ready, Built-In 3d', Connectivity: 'Bluetooth, Wi-Fi', Resolution: '1024 x 768' }
+    specs: { Brand: 'MS', Uses: 'Business', 'Special Feature': '3d-Ready, Built-In 3d', Connectivity: 'Bluetooth, Wi-Fi', Resolution: '1024 x 768' }
   }
 };
 
@@ -132,10 +132,10 @@ function openModal(productId) {
   // Set the product-specific image as a child element
   img.innerHTML = '';
 
-  if (productId === 'Missyou-16') {
+  if (productId === 'MS-16') {
     const imgElement = document.createElement('img');
     imgElement.src = 'holo fan.jpeg';
-    imgElement.alt = 'Missyou Product Image';
+    imgElement.alt = 'MS Product Image';
     imgElement.style.width = '100%';
     imgElement.style.height = '100%';
     imgElement.style.objectFit = 'cover';
