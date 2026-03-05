@@ -100,7 +100,7 @@ const PRODUCTS = {
   'MS-16': {
     name: 'MS 42 cm 3D Fan',
     size: '42 cm',
-    price: 19000,
+    price: 23999,
     stars: '★★★★★',
     desc: 'Advanced LED technology to create vibrant, high-definition 3D visuals that are clear and bright.',
     specs: { Brand: 'MS', Uses: 'Business', 'Special Feature': '3d-Ready, Built-In 3d', Connectivity: 'Bluetooth, Wi-Fi', Resolution: '1024 x 768' }
