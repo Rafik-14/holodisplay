@@ -1893,23 +1893,52 @@ p {
     align-items: flex-end;
 }
 
-.desktop-video-container {
+.mobile-video-container {
     position: relative;
     width: 100%;
-    max-width: 800px;
-    aspect-ratio: 16/9;
-    background: #111;
-    border-radius: 12px;
-    padding: 8px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    border: 2px solid #333;
+    max-width: 280px;
+    aspect-ratio: 9 / 19.5;
+    background: #000;
+    border-radius: 44px;
+    padding: 12px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6), inset 0 0 6px rgba(255, 255, 255, 0.3);
+    border: 2px solid #444;
+    margin: 0 auto;
 }
 
-.desktop-video-container video {
+/* iPhone Notch / Dynamic Island */
+.mobile-video-container::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 25px;
+    background: #000;
+    border-radius: 0 0 16px 16px;
+    z-index: 2;
+}
+
+/* Home Bar */
+.mobile-video-container::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    z-index: 2;
+}
+
+.mobile-video-container video {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px;
+    border-radius: 32px;
     display: block;
 }
 
@@ -1937,12 +1966,29 @@ p {
         padding: 0 10px;
     }
 
-    .desktop-video-container {
+    .mobile-video-container {
         width: 100%;
-        aspect-ratio: 16/9;
+        max-width: 240px;
+        aspect-ratio: 9 / 19.5;
         height: auto;
-        border-radius: 8px;
-        padding: 4px;
+        border-radius: 38px;
+        padding: 10px;
+        border-width: 2px;
+    }
+
+    .mobile-video-container::before {
+        top: 10px;
+        width: 80px;
+        height: 22px;
+    }
+
+    .mobile-video-container::after {
+        bottom: 16px;
+        width: 80px;
+    }
+
+    .mobile-video-container video {
+        border-radius: 28px;
     }
 }
 

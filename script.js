@@ -98,9 +98,9 @@ sections.forEach(s => sectionObserver.observe(s));
    ===================================================== */
 const PRODUCTS = {
   'Missyou-16': {
-    name: 'Missyou 16.5" 3D Fan',
-    size: '16.5"',
-    price: 149,
+    name: 'Missyou 42 cm 3D Fan',
+    size: '42 cm',
+    price: 19000,
     stars: '★★★★★',
     desc: 'Advanced LED technology to create vibrant, high-definition 3D visuals that are clear and bright.',
     specs: { Brand: 'Missyou', Uses: 'Business', 'Special Feature': '3d-Ready, Built-In 3d', Connectivity: 'Bluetooth, Wi-Fi', Resolution: '1024 x 768' }
@@ -121,7 +121,7 @@ function openModal(productId) {
   document.getElementById('modal-stars').textContent = p.stars;
   document.getElementById('modal-size').textContent = p.size;
   document.getElementById('modal-desc').textContent = p.desc;
-  document.getElementById('modal-price').textContent = '$' + p.price.toLocaleString();
+  document.getElementById('modal-price').textContent = p.price.toLocaleString() + ' DA';
   document.getElementById('modal-qty').textContent = '1';
   document.getElementById('modal-tag').textContent = 'Modèle HoloDisplay';
 
@@ -261,7 +261,7 @@ function updateCartUI() {
           </div>
         </div>
         <div class="cart-item-right">
-          <span class="cart-item-price">$${(product.price * qty).toLocaleString()}</span>
+          <span class="cart-item-price">${(product.price * qty).toLocaleString()} DA</span>
           <button class="cart-remove-btn" onclick="removeFromCart('${product.name}')">إزالة</button>
         </div>
       </div>
@@ -269,8 +269,8 @@ function updateCartUI() {
     }).join('');
 
     const subtotal = entries.reduce((s, { product, qty }) => s + product.price * qty, 0);
-    document.getElementById('cart-subtotal').textContent = '$' + subtotal.toLocaleString();
-    document.getElementById('cart-total').textContent = '$' + subtotal.toLocaleString();
+    document.getElementById('cart-subtotal').textContent = subtotal.toLocaleString() + ' DA';
+    document.getElementById('cart-total').textContent = subtotal.toLocaleString() + ' DA';
   }
 }
 
@@ -331,13 +331,13 @@ function openCheckoutModal() {
           <small>${item.product.size}</small><br>
           Quantity: ${item.qty}
         </div>
-        <div style="text-align: right;">$${itemTotal.toLocaleString()}</div>
+        <div style="text-align: right;">${itemTotal.toLocaleString()} DA</div>
       </div>
     `;
   }
 
   orderDetailsContainer.innerHTML = orderHTML;
-  checkoutTotalElement.textContent = '$' + total.toLocaleString();
+  checkoutTotalElement.textContent = total.toLocaleString() + ' DA';
 
   // Show the modal
   const modalOverlay = document.getElementById('checkout-modal-overlay');
@@ -374,7 +374,7 @@ function confirmPurchase() {
     // Prepare cart data for email
     const cartData = [];
     for (const [productName, item] of Object.entries(cart)) {
-      cartData.push(`${item.product.name} (${item.product.size}): ${item.qty} x $${item.product.price} = $${item.qty * item.product.price}`);
+      cartData.push(`${item.product.name} (${item.product.size}): ${item.qty} x ${item.product.price} DA = ${item.qty * item.product.price} DA`);
     }
 
     const totalAmount = Object.values(cart).reduce((sum, item) => sum + (item.qty * item.product.price), 0);
@@ -386,7 +386,7 @@ function confirmPurchase() {
       from_name: customerName,
       to_name: 'Store Manager',
       subject: `New Lead / Order from: ${customerName}`,
-      message: `CUSTOMER DETAILS:\nName:  ${customerName}\nEmail: ${customerEmail}\nPhone: ${customerPhone}\n\nORDER SUMMARY:\n${cartData.join('\n')}\n\nTOTAL VALUE: $${totalAmount.toLocaleString()}`
+      message: `CUSTOMER DETAILS:\nName:  ${customerName}\nEmail: ${customerEmail}\nPhone: ${customerPhone}\n\nORDER SUMMARY:\n${cartData.join('\n')}\n\nTOTAL VALUE: ${totalAmount.toLocaleString()} DA`
     };
 
     emailjs.send('service_ad41xmi', 'template_t6h379o', templateParams)
