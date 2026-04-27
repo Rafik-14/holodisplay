@@ -1,0 +1,193 @@
+/* ============================================================
+   HOLODISPLAY — MICRO-INTERACTIONS & PREMIUM UPGRADES
+   All new effects layered on top of main.css
+   ============================================================ */
+
+/* ─── 1. GLASSMORPHISM NAV (always active, not just on scroll) ─── */
+.nav {
+  background: rgba(3, 5, 7, 0.55) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07) !important;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease !important;
+}
+
+.nav.scrolled {
+  background: rgba(3, 5, 7, 0.82) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(155, 127, 232, 0.18) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ─── 2. BENTO BOX HOVER SPRINGS ─── */
+.ab-cell,
+.bento-glow,
+.product-card,
+.review-card {
+  transition:
+    transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-color 0.25s ease !important;
+  cursor: pointer;
+  will-change: transform;
+}
+
+.ab-cell:hover,
+.bento-glow:hover,
+.product-card:hover,
+.review-card:hover {
+  transform: scale(1.025) translateY(-3px) !important;
+  box-shadow:
+    0 0 0 1px rgba(155, 127, 232, 0.3),
+    0 0 30px rgba(155, 127, 232, 0.12),
+    0 16px 48px rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(155, 127, 232, 0.35) !important;
+  z-index: 2;
+}
+
+.ab-cell:hover .ab-cell-title {
+  color: var(--blade) !important;
+}
+
+/* ─── 3. ANIMATED GRADIENT TEXT ─── */
+.gradient-text,
+.hd-grad {
+  background: linear-gradient(
+    100deg,
+    var(--blade) 0%,
+    var(--arc)   40%,
+    var(--gold)  60%,
+    var(--blade) 100%
+  ) !important;
+  background-size: 200% auto !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  animation: gradientFlow 4s linear infinite !important;
+}
+
+@keyframes gradientFlow {
+  0%   { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── 4. SCROLL-REVEAL — fade + slide up ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger helpers — applied via JS dataset */
+.reveal[data-delay="80"]  { transition-delay: 80ms; }
+.reveal[data-delay="160"] { transition-delay: 160ms; }
+.reveal[data-delay="240"] { transition-delay: 240ms; }
+.reveal[data-delay="320"] { transition-delay: 320ms; }
+.reveal[data-delay="400"] { transition-delay: 400ms; }
+.reveal[data-delay="500"] { transition-delay: 500ms; }
+
+/* ─── 5. MAGNETIC BUTTON SETUP ─── */
+.btn-primary,
+.btn-nav,
+[data-magnetic] {
+  transition:
+    transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.25s ease,
+    background 0.25s ease !important;
+  will-change: transform;
+}
+
+/* ─── 6. FAQ ACCORDION — smooth slide ─── */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+  padding: 0 1.25rem;
+}
+
+.faq-answer.open {
+  max-height: 400px;
+  padding: 1rem 1.25rem 1.5rem;
+}
+
+.faq-question {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--line);
+  transition: color 0.2s;
+}
+
+.faq-question:hover {
+  color: var(--blade);
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: var(--muted);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s;
+  display: inline-block;
+  line-height: 1;
+}
+
+.faq-question.open .faq-icon {
+  transform: rotate(45deg);
+  color: var(--blade);
+}
+
+/* ─── 7. TYPING CURSOR for terminal effect ─── */
+.typing-text::after {
+  content: '█';
+  animation: blink 0.8s step-end infinite;
+  color: var(--arc);
+  font-size: 0.85em;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ─── 8. 3D TILT — VanillaTilt hook classes ─── */
+[data-tilt] {
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+[data-tilt] .ab-hero-title,
+[data-tilt] .ab-hero-sub,
+[data-tilt] .ab-hero-cta {
+  transform: translateZ(20px);
+}
+
+[data-tilt] .ab-hero-img-wrap {
+  transform: translateZ(8px);
+}
+
+/* ─── 9. SECTION-TAG typing target ─── */
+.section-tag {
+  display: inline-block;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--arc);
+  border: 1px solid rgba(155, 127, 232, 0.25);
+  padding: 0.3rem 0.85rem;
+  margin-bottom: 1rem;
+}
+
+/* ─── 10. Smooth scroll for any anchor within the page ─── */
+html { scroll-behavior: smooth; }

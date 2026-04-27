@@ -1,0 +1,831 @@
+/* ============================================================
+   HOLODISPLAY — MOBILE RESPONSIVE LAYER
+   Drop this AFTER micro-interactions.css in your <head>.
+   Covers: 480px (xs), 640px (sm), 768px (md), 1024px (lg)
+   ============================================================ */
+
+/* ─── GLOBAL MOBILE FOUNDATION ─── */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+
+  body {
+    overflow-x: clip; /* Must be 'clip' not 'hidden' for position: sticky to work */
+  }
+
+  /* Larger tap targets everywhere */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAV — Hamburger menu on mobile
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* Premium Floating Pill Navigation */
+  .nav {
+    top: 15px !important;
+    left: 15px !important;
+    right: 15px !important;
+    width: calc(100% - 30px) !important;
+    max-width: 100% !important;
+    padding: 0 1.25rem !important;
+    border-radius: 100vw !important;
+    /* Floating pill */
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: rgba(8, 12, 16, 0.65) !important;
+    /* Glassmorphism */
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    margin: 0 !important;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    animation: slideDownNav 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideDownNav {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .nav-inner {
+    height: 58px;
+    gap: 0.75rem;
+  }
+
+  /* Hide desktop links */
+  .nav-links {
+    display: none !important;
+  }
+
+  /* Show hamburger button */
+  .nav-hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--text);
+    width: 38px;
+    height: 38px;
+    cursor: pointer;
+    flex-shrink: 0;
+    order: 10;
+    transition: border-color 0.2s;
+  }
+
+  .nav-hamburger:hover {
+    border-color: var(--arc);
+  }
+
+  /* Compact right-side controls */
+  .nav-right {
+    gap: 0.4rem;
+    margin-inline-start: auto;
+  }
+
+  /* Hide "تسوق الآن" button in nav to save space — keep cart + lang */
+  .btn-nav {
+    display: none !important;
+  }
+
+  #lang-switch-btn {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.7rem !important;
+  }
+
+  /* Sleek Animated Mobile drawer */
+  .nav-mobile-drawer {
+    display: none;
+    position: fixed;
+    top: 85px;
+    /* Appears below pill */
+    left: 15px;
+    right: 15px;
+    border-radius: 20px;
+    background: rgba(8, 12, 16, 0.9);
+    backdrop-filter: blur(30px) saturate(150%);
+    -webkit-backdrop-filter: blur(30px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    padding: 1.5rem 1.25rem 2rem;
+    flex-direction: column;
+    gap: 0;
+    transform-origin: top center;
+    animation: drawerPopIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .nav-mobile-drawer.open {
+    display: flex;
+  }
+
+  .nav-mobile-drawer a {
+    display: block;
+    font-family: var(--font-tech);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s, padding-left 0.3s;
+    opacity: 0;
+    animation: fadeItemsIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .nav-mobile-drawer a:nth-child(1) {
+    animation-delay: 0.05s;
+  }
+
+  .nav-mobile-drawer a:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  .nav-mobile-drawer a:nth-child(3) {
+    animation-delay: 0.15s;
+  }
+
+  .nav-mobile-drawer a:nth-child(4) {
+    animation-delay: 0.2s;
+  }
+
+  .nav-mobile-drawer a:nth-child(5) {
+    animation-delay: 0.25s;
+  }
+
+  .nav-mobile-drawer a:hover {
+    color: var(--blade);
+    padding-left: 10px;
+  }
+
+  .nav-mobile-drawer a:hover {
+    color: var(--blade);
+  }
+
+  .nav-mobile-drawer .drawer-cta {
+    margin-top: 1.5rem;
+    background: var(--blade);
+    color: #000 !important;
+    font-family: var(--font-tech);
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.85rem 1.5rem !important;
+    text-align: center;
+    display: block;
+    border: none;
+    border-bottom: none !important;
+  }
+
+  @keyframes drawerPopIn {
+    from {
+      opacity: 0;
+      transform: scaleY(0.9) translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scaleY(1) translateY(0);
+    }
+  }
+
+  @keyframes fadeItemsIn {
+    from {
+      opacity: 0;
+      transform: translateX(-15px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 58px !important;
+    min-height: 100svh;
+  }
+
+  .hero-inner {
+    padding: 3rem 1.25rem 2.5rem !important;
+    gap: 2rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero headline — tighter on small screens */
+  .hero-text h1,
+  .hero-text .hd-hero-h1 {
+    font-size: clamp(2.4rem, 10vw, 3.8rem) !important;
+    letter-spacing: -0.5px !important;
+    line-height: 1.1 !important;
+  }
+
+  .hero-text .hd-hero-h1 .reveal-text,
+  .hero-text .hd-hero-h1 .reveal-text-delayed {
+    white-space: normal !important;
+    text-align: center !important;
+  }
+
+  .hero-text {
+    gap: 1.25rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  .badge {
+    font-size: 0.65rem;
+    padding: 0.25rem 0.7rem;
+  }
+
+  /* Bento mini cards — 2 columns on mobile */
+  .hero-bento-mini {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+    margin-bottom: 2rem !important;
+  }
+
+  .mini-bento-card {
+    padding: 0.65rem 0.75rem !important;
+    font-size: 0.72rem !important;
+    justify-content: flex-start;
+    white-space: normal !important;
+  }
+
+  /* CTA buttons stack on mobile */
+  .hero-cta {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    width: 100%;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    padding: 0.85rem 1.5rem !important;
+    font-size: 0.82rem !important;
+  }
+
+  /* Trust badges center + wrap */
+  .trust-badges {
+    justify-content: center !important;
+    flex-wrap: wrap;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   AETHER BENTO GRID
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .aether-bento-section {
+    padding: 4rem 1rem;
+  }
+
+  /* Override desktop 4-column layout → single column */
+  .aether-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+    /* Enhanced: Increased from 8px for better premium breathing room between cards */
+  }
+
+  /* Reset all explicit grid placements */
+  .ab-hero,
+  .ab-visuals,
+  .ab-app,
+  .ab-design,
+  .ab-specs,
+  .ab-blades,
+  .ab-quote,
+  .ab-review,
+  .ab-monolith,
+  .ab-extra {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+  }
+
+  /* Hero cell — taller, full width */
+  .ab-hero {
+    min-height: 280px !important;
+    padding: 1.5rem !important;
+  }
+
+  .ab-hero-title {
+    font-size: 1.5rem !important;
+  }
+
+  .ab-hero-img-wrap {
+    width: 55% !important;
+    height: 70% !important;
+  }
+
+  /* Visuals row — stay flex, smaller icons */
+  .ab-visuals-row {
+    gap: 0.75rem;
+    /* Enhanced: More space between stat metrics */
+  }
+
+  .ab-vis-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .ab-vis-val {
+    font-size: 0.85rem;
+  }
+
+  /* Monolith video — match vertical aspect ratio perfectly */
+  .ab-monolith {
+    padding: 0 !important;
+    min-height: auto !important;
+    aspect-ratio: 9 / 16;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ab-monolith-video-wrap {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .ab-monolith-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  /* App video card — match horizontal aspect ratio to remove any baked-in letterboxing */
+  .ab-app {
+    padding: 0 !important;
+    min-height: auto !important;
+    aspect-ratio: 3 / 4;
+    /* Portrait, adding even more height */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ab-app>video {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    transform: scale(1.02);
+    /* Slight scale to hide any edge black bars */
+  }
+
+  .ab-app>div:last-child {
+    position: absolute !important;
+    inset: 0 !important;
+    padding: 1.25rem !important;
+  }
+
+  /* Cells default padding */
+  .ab-cell {
+    padding: 1.25rem !important;
+  }
+
+  /* Hero CTA in bento */
+  .ab-hero-cta {
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    /* Enhanced */
+  }
+
+  .ab-hero-cta .btn {
+    font-size: 0.78rem;
+    padding: 0.65rem 1.25rem;
+    /* Enhanced: Larger tap area for main conversion button */
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRODUCTS GRID
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)) !important;
+    gap: 1rem !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   REVIEWS GRID
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .reviews {
+    padding: 4rem 1.25rem;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FEATURES / BENTO GRID
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .features-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .bento-grid-features {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .col-span-2 {
+    grid-column: span 1 !important;
+  }
+
+  .bento-feature-card {
+    padding: 1.75rem !important;
+  }
+
+  .bento-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .bento-large,
+  .bento-wide {
+    grid-column: span 1 !important;
+    grid-row: auto !important;
+  }
+}
+
+
+
+/* ═══════════════════════════════════════════════════════════
+   FAQ
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .faq-section {
+    padding: 4rem 1.25rem;
+  }
+
+  .faq-question {
+    padding: 1rem 0;
+    font-size: 0.88rem;
+  }
+
+  /* Larger tap target for accordion */
+  .faq-question {
+    min-height: 52px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION HEADERS
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section-header {
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem) !important;
+    line-height: 1.2 !important;
+  }
+
+  .media-caption h3 {
+    font-size: clamp(1.6rem, 7vw, 2.5rem) !important;
+  }
+
+  .media-caption p {
+    font-size: 1rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MEDIA SHOWCASE / MONOLITH VIDEO
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .monolith-view {
+    padding: 4rem 1.25rem !important;
+  }
+
+  .glass-monolith-wrapper {
+    max-width: 100%;
+    padding: 0.75rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER CTA + FOOTER
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .footer-cta {
+    padding: 3.5rem 1.25rem;
+  }
+
+  .footer-cta-inner {
+    gap: 1rem;
+  }
+
+  .footer-cta .btn {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .footer {
+    padding: 2.5rem 1.25rem 1.25rem;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .footer-bottom {
+    padding-top: 1.25rem;
+    font-size: 0.7rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CART PANEL
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .cart-panel {
+    max-width: 100% !important;
+  }
+
+  .cart-items {
+    padding: 1rem;
+  }
+
+  .cart-header {
+    padding: 1.25rem 1rem;
+  }
+
+  .cart-summary {
+    padding: 1.25rem 1rem;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   PRODUCT MODAL
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .modal-box {
+    max-height: 92vh;
+    border-radius: 0;
+    /* Bottom sheet style */
+    transform: translateY(100%) !important;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    width: 100%;
+  }
+
+  .modal-overlay.open .modal-box {
+    transform: translateY(0) !important;
+  }
+
+  .modal-inner {
+    grid-template-columns: 1fr !important;
+  }
+
+  .modal-img-col {
+    border-right: none !important;
+    border-bottom: 1px solid var(--line);
+    padding: 1.25rem;
+  }
+
+  .modal-info-col {
+    padding: 1.25rem;
+  }
+
+  .modal-close {
+    top: 0.6rem !important;
+    inset-inline-end: 0.75rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CHECKOUT MODAL
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  #checkout-modal-overlay {
+    padding: 0;
+    align-items: flex-end !important;
+  }
+
+  .checkout-modal-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 92vh !important;
+    border-radius: 0 !important;
+    transform: translateY(100%) scale(1) !important;
+    transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1) !important;
+  }
+
+  .modal-overlay.open .checkout-modal-box {
+    transform: translateY(0) scale(1) !important;
+  }
+
+  /* Inner padding tighter */
+  .checkout-modal-box>div {
+    padding: 1.75rem 1.25rem 1.5rem !important;
+  }
+
+  /* Name fields: 2-col → 1-col */
+  #checkout-step2 [style*="grid-template-columns:1fr 1fr"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TOAST — better position on mobile
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    text-align: center;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MICRO-INTERACTIONS — disable heavy effects on touch
+   ═══════════════════════════════════════════════════════════ */
+@media (hover: none) and (pointer: coarse) {
+
+  /* Disable magnetic button JS (fallback: just reset transform) */
+  .btn-primary,
+  .btn-nav,
+  [data-magnetic] {
+    transform: none !important;
+  }
+
+  /* Disable 3D tilt on touch */
+  [data-tilt] {
+    transform: none !important;
+    transform-style: flat !important;
+  }
+
+  /* Keep hover scale effects subtle on touch — remove translate */
+  .ab-cell:hover,
+  .bento-glow:hover,
+  .product-card:hover,
+  .review-card:hover {
+    transform: none !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   EXTRA SMALL — 360px phones
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 400px) {
+
+  .hero-text h1,
+  .hero-text .hd-hero-h1 {
+    font-size: 2rem !important;
+  }
+
+  .hero-bento-mini {
+    grid-template-columns: 1fr !important;
+  }
+
+  .nav-logo {
+    font-size: 0.9rem !important;
+  }
+
+  .ab-hero-title {
+    font-size: 1.25rem !important;
+  }
+
+  h2 {
+    font-size: 1.4rem !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TABLET — 768px–1024px
+   ═══════════════════════════════════════════════════════════ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .nav {
+    padding: 0 1.5rem !important;
+  }
+
+  .hero-inner {
+    padding: 4rem 1.5rem !important;
+    max-width: 100% !important;
+  }
+
+  .hero-bento-mini {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .aether-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .ab-hero {
+    grid-column: 1 / 3 !important;
+    grid-row: 1 !important;
+  }
+
+  .ab-monolith {
+    grid-column: 1 / 3 !important;
+    grid-row: auto !important;
+  }
+
+  .ab-extra {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HAMBURGER ICON — default hidden, shown via JS toggle
+   ═══════════════════════════════════════════════════════════ */
+.nav-hamburger {
+  display: none;
+  /* Hidden on desktop, shown via media query */
+}
+
+/* ═══════════════════════════════════════════════════════════
+   RTL FIXES ON MOBILE
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  [dir="rtl"] .nav-inner {
+    flex-direction: row;
+  }
+
+  [dir="rtl"] .nav-right {
+    margin-inline-start: auto;
+    margin-inline-end: 0;
+  }
+
+  [dir="rtl"] .hero-cta {
+    align-items: center;
+  }
+
+  [dir="rtl"] .footer-cta-inner {
+    align-items: center;
+    text-align: center;
+  }
+
+  [dir="rtl"] .cart-panel {
+    border-left: none;
+    border-right: 1px solid var(--line2);
+  }
+}
