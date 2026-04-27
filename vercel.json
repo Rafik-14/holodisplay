@@ -1,8 +1,10 @@
-{
+# Overwrite vercel.json with correct path
+Set-Content vercel.json '{
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/files/index.html"
     }
   ]
-}
+}'
+
